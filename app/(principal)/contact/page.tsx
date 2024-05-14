@@ -6,10 +6,30 @@ export const metadata: Metadata = {
     keywords: ["contact", "contact page", "contact us"],
 };
 
+const contacts = [
+    {
+        name: "John Doe",
+        email: "john.doe@sasf.net"
+    },
+    {
+        name: "Jane Doe",
+        email: "jane.doe@sasf.net"
+    },
+    {
+        name: "Kelvin Doe",
+        email: "kelvin.doe@sasf.net"
+    }
+];
+
 export default function ContactPage() {
     return (
-        <div>
-            <span className="text-7xl">ContactPage</span>
-        </div>
-    )
+        <>
+            {contacts.map((contact, index) => (
+                <div key={index}>
+                    <span className="text-2xl">{contact.name}</span>
+                    <span className="text-2xl">{contact.email}</span>
+                </div>
+            ))}
+        </>
+    );
 }
